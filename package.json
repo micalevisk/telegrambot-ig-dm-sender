@@ -1,0 +1,19 @@
+{
+  "name": "tg-reply-ig-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "clean": "rm -rf accounts cookies db output"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.0",
+    "slimbot": "^4.4.0",
+    "tools-for-instagram": "^1.8.2"
+  }
+}

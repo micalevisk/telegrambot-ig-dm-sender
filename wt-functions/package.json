@@ -1,0 +1,17 @@
+{
+  "name": "storage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "storage.js",
+  "scripts": {
+    "wt:serve": "wt serve . --storage-file ./storageFile.json --secrets-file ./.env --hostname localhost --port 1234",
+    "wt:create": "wt create -b . --secrets-file ./.env --name storage",
+    "wt:logs": "wt logs"
+  },
+  "keywords": [
+    "webtask"
+  ],
+  "author": "Micael Levi <mllc@icomp.ufam.edu.br> (micalevisk.github.io)",
+  "license": "ISC",
+  "devDependencies": {}
+}
