@@ -42,6 +42,7 @@ const accessStorage = (key, rawValue) => {
     });
 };
 
+let __lock = false;
 
 (async function __start__() {
   let ig = null;
@@ -108,7 +109,14 @@ const accessStorage = (key, rawValue) => {
     }
   };
 
-  slimbot.on('message', botReceiveMessage);
+  slimbot.on('message', function replyUser(msg) {
+    if (global.__lock) { // Prevent storage concurrent access
+      setImmediate(() => replyUser(msg));
+    } else {
+      global.__lock = true;
+      botReceiveMessage(msg).then(() => global.__lock = false);
+    }
+  });
 
   return slimbot.startPolling();
 })();
